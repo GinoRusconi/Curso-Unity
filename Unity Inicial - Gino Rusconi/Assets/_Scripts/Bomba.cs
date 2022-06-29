@@ -4,7 +4,7 @@ public class Bomba : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown("Explotar"))
+        if (Input.GetButtonDown("Explotar"))
         {
             Destroy(gameObject);
         }
