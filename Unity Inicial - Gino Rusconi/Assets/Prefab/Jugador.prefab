@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1821424614}
   - component: {fileID: 5158478128971008453}
   - component: {fileID: 8346060669156835792}
+  - component: {fileID: -7720698985274412802}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -114,8 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5821172745323728205, guid: baaa67ff29721c044b6a1269928982f0, type: 3}
+  _tagTargetDamage: Enemy
   nombreAccion: DispararBala
   _TimeBeetwenShoot: 2
+  _DistanciaSpawnBullet: 1.5
 --- !u!114 &1821424614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,8 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6551233121990038122, guid: a0899a2f058633a4bbb66461892d9e66, type: 3}
+  _tagTargetDamage: Enemy
   nombreAccion: DispararBomba
   _TimeBeetwenShoot: 1
+  _DistanciaSpawnBullet: 0
 --- !u!114 &5158478128971008453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,11 +157,26 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733614097314813213}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.4
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-7720698985274412802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733614097314813213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a982d3276369a9340b75bda348d8599d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadMovimiento: 500
+  velocidadRotacion: 3
+  _maxSpeed: 10

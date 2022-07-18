@@ -6,9 +6,10 @@ public class GeneradorOleada : MonoBehaviour
 {
     public GameObject prefab;
     public float _TimeToSpawn;
+    public float _StartSpawn;
     private void Awake()
     {
-        InvokeRepeating("InstanciarPrefab", 0.2f, _TimeToSpawn);
+        InvokeRepeating("InstanciarPrefab", _StartSpawn, _TimeToSpawn);
     }
 
     void InstanciarPrefab()

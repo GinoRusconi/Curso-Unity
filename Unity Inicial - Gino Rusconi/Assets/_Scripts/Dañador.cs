@@ -5,13 +5,18 @@ using UnityEngine;
 public class Dañador : MonoBehaviour
 {
     public int _Daño;
+    public string _TagTarget;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Enemy")
+        if (other.gameObject.GetComponent<Vida>())
         {
-            Vida vida = other.gameObject.GetComponent<Vida>();
-            vida._Cantidad -= _Daño;
-            Destroy(gameObject);
+            if (other.tag == _TagTarget || other.tag == "Wall")
+            {
+                Vida vida = other.gameObject.GetComponent<Vida>();
+                vida._Cantidad -= _Daño;
+                Destroy(gameObject);
+            }
         }
     }
 }

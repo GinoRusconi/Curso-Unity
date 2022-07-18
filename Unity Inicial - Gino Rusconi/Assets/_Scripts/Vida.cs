@@ -10,6 +10,7 @@ public class Vida : MonoBehaviour
     {
         if (_Cantidad <= 0)
         {
+            SendMessage("Mori");
             Destroy(gameObject);
         }
     }
