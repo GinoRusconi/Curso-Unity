@@ -31,5 +31,9 @@ public class GameManagerNivel3 : MonoBehaviour
             }
         }
     }
-    
+    public void PlayerDead()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

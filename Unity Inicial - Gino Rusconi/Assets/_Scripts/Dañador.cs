@@ -14,7 +14,7 @@ public class Dañador : MonoBehaviour
             if (other.tag == _TagTarget || other.tag == "Wall")
             {
                 Vida vida = other.gameObject.GetComponent<Vida>();
-                vida._Cantidad -= _Daño;
+                vida.GetDamage(_Daño);
                 Destroy(gameObject);
             }
         }

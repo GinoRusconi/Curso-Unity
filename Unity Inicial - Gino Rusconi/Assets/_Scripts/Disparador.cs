@@ -6,22 +6,38 @@ public class Disparador : MonoBehaviour
     public string _tagTargetDamage;
     public string nombreAccion;
     public float _TimeBeetwenShoot;
-    public float _DistanciaSpawnBullet;
+    private float _LastTimeShoot;
+    public GameObject _DistanciaSpawnBullet;
+
+    private bool _IsShootingEnabled;
+
+    private void Start()
+    {
+        _IsShootingEnabled = true;
+    }
     void Update()
     {
-        if (Input.GetButtonDown(nombreAccion))
+        if (Input.GetButton(nombreAccion) && _IsShootingEnabled)
         {
-            InvokeRepeating("Disparar", 0, _TimeBeetwenShoot);
-        }
-        if (Input.GetButtonUp(nombreAccion))
+            _LastTimeShoot = 0f;
+            _IsShootingEnabled = false;
+            Disparar();
+        } 
+        else if (_LastTimeShoot < _TimeBeetwenShoot)
         {
-            CancelInvoke("Disparar");
+            _LastTimeShoot += Time.deltaTime;
+
+            if (_LastTimeShoot >= _TimeBeetwenShoot)
+            {
+                _IsShootingEnabled = true;
+            }
         }
+        
     }
 
     void Disparar()
     {
-        GameObject prefb = Instantiate(prefab, transform.position + (transform.forward * _DistanciaSpawnBullet), transform.rotation);
+        GameObject pref = Instantiate(prefab, _DistanciaSpawnBullet.transform.position, _DistanciaSpawnBullet.transform.rotation);
         prefab.gameObject.GetComponent<Dañador>()._TagTarget = _tagTargetDamage;
     }
 }

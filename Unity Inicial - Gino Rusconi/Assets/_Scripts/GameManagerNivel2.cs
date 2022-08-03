@@ -21,4 +21,8 @@ public class GameManagerNivel2 : MonoBehaviour
             SceneManager.LoadScene(nextLvl);
         }
     }
+    public void PlayerDead()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

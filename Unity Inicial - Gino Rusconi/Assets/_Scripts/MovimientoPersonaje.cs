@@ -18,12 +18,12 @@ public class MovimientoPersonaje : MonoBehaviour
     void Update()
     {
         _directionHorizontal = Input.GetAxisRaw("Horizontal");
-        _directionVertical = Input.GetAxisRaw("Vertical");
+        //_directionVertical = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(_directionHorizontal, 0 , _directionVertical);
+        Vector3 direction = new Vector3(_directionHorizontal, 0 , 0);
         Vector3 force = Vector3.ClampMagnitude(direction * velocidadMovimiento * Time.deltaTime, _maxSpeed);
         _rigidbody.AddForce(force);
     }

@@ -5,7 +5,7 @@ public class DisparadorAutomatico : MonoBehaviour
     public GameObject prefab;
     public string _tagTargetDamage;
     public float _TimeBetweenShoot;
-    public float _DistanciaSpawnBullet;
+    public GameObject _DistanciaSpawnBullet;
 
     void Awake()
     {
@@ -14,7 +14,7 @@ public class DisparadorAutomatico : MonoBehaviour
 
     void Disparar()
     {
-        GameObject pref = Instantiate(prefab, transform.position + (transform.forward * _DistanciaSpawnBullet), transform.rotation);
+        GameObject pref = Instantiate(prefab, _DistanciaSpawnBullet.transform.position, _DistanciaSpawnBullet.transform.rotation);
         pref.gameObject.GetComponent<Dañador>()._TagTarget = _tagTargetDamage;
     }
 }

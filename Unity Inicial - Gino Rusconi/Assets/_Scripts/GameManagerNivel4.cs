@@ -32,4 +32,8 @@ public class GameManagerNivel4 : MonoBehaviour
             SceneManager.LoadScene(_SwapLvlToLose);
         }
     }
+    public void PlayerDead()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
