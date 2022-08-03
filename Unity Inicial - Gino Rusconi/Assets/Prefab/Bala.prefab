@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5821172745323728194}
   - component: {fileID: 5821172745323728193}
   - component: {fileID: 5821172745323728192}
-  - component: {fileID: 5821172745323728207}
   - component: {fileID: 5821172745323728206}
   - component: {fileID: 6886814628735718281}
   - component: {fileID: -2540129737317884411}
+  - component: {fileID: 7407906641296664134}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5821172745323728205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.1}
-  m_LocalScale: {x: 0.64, y: 0.38, z: 1.31}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5821172745323728205}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 91a12132339e19346a35e07960f4ef02, type: 3}
 --- !u!23 &5821172745323728192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9aeb406993f1c354b813ec0528380bc5, type: 2}
+  - {fileID: 2100000, guid: 03cf17cedb09cf6468771788ef38d1d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5821172745323728207
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5821172745323728205}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5821172745323728206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "_Da\xF1o": 10
-  _TagTarget: 
+  _TagTarget: Enemy
 --- !u!114 &-2540129737317884411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +129,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TimeToAutoDestruccion: 5
+--- !u!136 &7407906641296664134
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5821172745323728205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 1.2974454
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.6057343}
