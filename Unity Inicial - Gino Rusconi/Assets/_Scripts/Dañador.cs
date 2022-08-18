@@ -6,6 +6,8 @@ public class Dañador : MonoBehaviour
 {
     public int _Daño;
     public string _TagTarget;
+    public GameObject sfxSound;
+    public AudioClip impactBullet;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +17,17 @@ public class Dañador : MonoBehaviour
             {
                 Vida vida = other.gameObject.GetComponent<Vida>();
                 vida.GetDamage(_Daño);
+                GameObject bulletParticle = Instantiate(sfxSound, gameObject.transform.position, gameObject.transform.rotation);
+                if (bulletParticle.GetComponent<AudioSource>().clip != impactBullet)
+                {
+                    bulletParticle.GetComponent<AudioSource>().clip = impactBullet;
+                    bulletParticle.GetComponent<AudioSource>().Play();
+                }else
+                {
+                    bulletParticle.GetComponent<AudioSource>().Play();
+                }
+                
+                Destroy(bulletParticle,impactBullet.length);
                 Destroy(gameObject);
             }
         }

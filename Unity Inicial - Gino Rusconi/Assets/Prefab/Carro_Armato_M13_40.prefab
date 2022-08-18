@@ -470,6 +470,8 @@ MonoBehaviour:
   - {fileID: 8863292211631605936}
   - {fileID: 8196016086525945596}
   - {fileID: 9115946866323655148}
+  sfxSound: {fileID: 1133208108614829652, guid: c13f2b871601c6145ae48d318e39667a, type: 3}
+  explotionSound: {fileID: 8300000, guid: 4bf7fda252bbb3a45b24eb3ee0c1a742, type: 3}
 --- !u!54 &4832642838860041733
 Rigidbody:
   m_ObjectHideFlags: 0

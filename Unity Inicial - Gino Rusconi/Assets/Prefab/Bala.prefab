@@ -116,6 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "_Da\xF1o": 10
   _TagTarget: Enemy
+  sfxSound: {fileID: 1133208108614829652, guid: c13f2b871601c6145ae48d318e39667a, type: 3}
+  impactBullet: {fileID: 8300000, guid: f9e0f1aa51b803c45b2dc7b97a509423, type: 3}
 --- !u!114 &-2540129737317884411
 MonoBehaviour:
   m_ObjectHideFlags: 0

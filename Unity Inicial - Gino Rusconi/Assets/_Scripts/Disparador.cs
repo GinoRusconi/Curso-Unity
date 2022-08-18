@@ -8,12 +8,14 @@ public class Disparador : MonoBehaviour
     public float _TimeBeetwenShoot;
     private float _LastTimeShoot;
     public GameObject _DistanciaSpawnBullet;
+    CharactersAudio _CharacterAudio;
 
     private bool _IsShootingEnabled;
 
     private void Start()
     {
         _IsShootingEnabled = true;
+        _CharacterAudio = GetComponent<CharactersAudio>();
     }
     void Update()
     {
@@ -29,6 +31,7 @@ public class Disparador : MonoBehaviour
 
             if (_LastTimeShoot >= _TimeBeetwenShoot)
             {
+                _CharacterAudio.ReloadSound();
                 _IsShootingEnabled = true;
             }
         }
@@ -39,5 +42,8 @@ public class Disparador : MonoBehaviour
     {
         GameObject pref = Instantiate(prefab, _DistanciaSpawnBullet.transform.position, _DistanciaSpawnBullet.transform.rotation);
         prefab.gameObject.GetComponent<Dañador>()._TagTarget = _tagTargetDamage;
+        _CharacterAudio.ShootSound();
     }
+
+    
 }
